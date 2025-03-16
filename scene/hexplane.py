@@ -207,7 +207,7 @@ class HexPlaneField(nn.Module):
             vp = init_vector_param(
                 grid_nd=config["grid_dimensions"],
                 in_dim=config["input_coordinate_dim"],
-                out_dim=config["output_coordinate_dim"]- config["output_coordinate_dim"]//2*2,
+                out_dim=int(config["output_coordinate_dim"]- config["output_coordinate_dim"]//2),
                 reso=config["resolution"],
             )
             # shape[1] is out-dim - Concatenate over feature len for each scale

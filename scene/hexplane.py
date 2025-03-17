@@ -147,7 +147,7 @@ def interpolate_mvs_features(pts: torch.Tensor,
         num_levels = len(ms_vectors)
     multi_scale_interp = [] if concat_features else 0.
     grid: nn.ParameterList
-    zeros = torch.zeros((pts.shape[0],1))
+    zeros = torch.zeros((pts.shape[0],1)).to(pts.device)
     for scale_id, grid in enumerate(ms_vectors[:num_levels]):
         interp_space = 1.
         for ci, coo_comb in enumerate(coo_combs):

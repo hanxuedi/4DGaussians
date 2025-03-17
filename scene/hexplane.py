@@ -190,6 +190,7 @@ class HexPlaneField(nn.Module):
 
         # 1. Init planes
         self.grids = nn.ModuleList()
+        self.vectors = nn.ModuleList()
         self.feat_dim = 0
         for res in self.multiscale_res_multipliers:
             # initialize coordinate grid
